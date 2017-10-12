@@ -36,7 +36,7 @@ ApplicationWindow {
 
     header: ToolBar {
         Material.foreground: "white"
-
+        Material.background: "gold"
         RowLayout {
             spacing: 20
             anchors.fill: parent
@@ -61,11 +61,13 @@ ApplicationWindow {
             Label {
                 id: titleLabel
                 text: listView.currentItem ? listView.currentItem.text : "Tranformer"
+                style: Text.Sunken
                 font.pixelSize: 20
                 elide: Label.ElideRight
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
+                color: "gold"
             }
 
             ToolButton {
@@ -120,7 +122,7 @@ ApplicationWindow {
             }
 
             model: ListModel {
-                ListElement { title: "BusyIndicator"; source: "qrc:/pages/BusyIndicatorPage.qml" }
+                ListElement { title: "TestCase"; source: "qrc:/pages/BusyIndicatorPage.qml" }
 
             }
 
@@ -237,15 +239,15 @@ ApplicationWindow {
 
             Label {
                 width: aboutDialog.availableWidth
-                text: "The Qt Quick Controls 2 module delivers the next generation user interface controls based on Qt Quick."
+                text: "Tranformer is an <i>Inception</i> which would allow oneself to emit Anything."
                 wrapMode: Label.Wrap
                 font.pixelSize: 12
             }
 
             Label {
                 width: aboutDialog.availableWidth
-                text: "In comparison to the desktop-oriented Qt Quick Controls 1, Qt Quick Controls 2 "
-                    + "are an order of magnitude simpler, lighter and faster, and are primarily targeted "
+                text: "It is an attempt to create a distilled piece of Simulation - "
+                    + "recipes for sound, reusable soutions to problem that can be  "
                     + "towards embedded and mobile platforms."
                 wrapMode: Label.Wrap
                 font.pixelSize: 12

@@ -7,7 +7,9 @@ SOURCES += main.cpp \
 
 HEADERS += \
     action.h \
-    intcomm.h
+    intcomm.h \
+    module.h \
+    flow.h
 
 RESOURCES += \
     qml.qrc \

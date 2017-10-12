@@ -5,33 +5,7 @@
 
 
 
-/*! Ummm, I am not sure which is best , to go for factory or interface, but here since my intention
-    is to suppport different types of testcases(manual as well as scripts), but still I think factory violates OCP
-class CTestCaseFactory{
-private:
-    CTestCaseFactory();
-public:
-    static CTestCase* factoryForTestCases(std::string strTestCaseType);
-};
 
-*/
-
-
-
-/*!
-    CTestCase is a particular case user wants to test in the System
-    For now this should be configurable only from the transaformer GUI but
-    later it should support scripts and files having test cases as well..
-*/
-class CTestCase{
-private:
-    std::string strTCLabel;
-    enum eTCType{ Manual, Automation};
-    std::list<std::unique_ptr<CFlow>> listTCFlows;
-public:
-    CTestCase(std::string strTCLabel, enum eTCType);
-    AssociateFlow(CFlow *pCFlow);
-};
 
 /*!
     \abstract CFlow : Flow for any testcase , there can be multiple flows for a test case
@@ -52,8 +26,20 @@ private:
     std::string m_strFlowName;
     bool m_bStartingPoint;
     std::list<unique_ptr<CAction>> m_upListModules;
+    /*! shouldn't a flow have a tree, with Action as nodes since the actions can be connected to many actions
+    across modules TODO: Yet to think of a data structure*/
+
 public:
     const std::list<unique_ptr<CModule> & AssociateModules(CModule *pCAction);
+};
+
+
+/*! FlowMangement class is designed to be in action when the flow gets executed
+    The intermediate or the any state of data processed for a flow will die with this object
+    Offcourse the state should be logged
+    This class should be also do exception handlings*/
+class FlowManagement{
+
 };
 
 //QtDoc

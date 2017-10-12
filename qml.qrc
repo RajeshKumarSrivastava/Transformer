@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Page1.qml</file>
-        <file>Page1Form.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>Welcome.qml</file>
         <file>images/+material/back.png</file>
@@ -42,7 +40,9 @@
         <file>images/qt-logo@3x.png</file>
         <file>images/qt-logo@4x.png</file>
         <file>images/Tranformer.png</file>
-        <file>action.h</file>
-        <file>main.cpp</file>
+        <file>.gitattributes</file>
+        <file>.gitignore</file>
+        <file>pages/Page1.qml</file>
+        <file>pages/Page1Form.ui.qml</file>
     </qresource>
 </RCC>
